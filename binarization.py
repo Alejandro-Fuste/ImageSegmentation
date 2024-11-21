@@ -1,20 +1,11 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
+from utils.plot_histogram import plot_histogram
 
 # Load the images
 image_paths = ["./images/bear_grayscale.jpg", "./images/golfer_grayscale.jpg", "./images/lions_grayscale.jpg"]
 images = [cv2.imread(img, cv2.IMREAD_GRAYSCALE) for img in image_paths]  # Convert to grayscale and NumPy array
-
-
-# Function to plot histogram
-def plot_histogram(image, title):
-    plt.figure()
-    plt.hist(image.ravel(), bins=256, range=(0, 256), color='gray')
-    plt.title(f"Histogram of {title}")
-    plt.xlabel("Pixel Intensity")
-    plt.ylabel("Frequency")
-    plt.show()
 
 
 # Function to perform thresholding
@@ -48,4 +39,3 @@ for idx, image in enumerate(images):
 
     plt.tight_layout()
     plt.show()
-
