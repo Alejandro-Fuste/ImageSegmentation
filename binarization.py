@@ -29,4 +29,23 @@ for idx, image in enumerate(images):
     plot_histogram(image, f"Image {idx + 1}")
 
     # Choose three thresholds manually based on the histogram
-    thresholds = [50, 178, 60]  # Replace with actual thresholds based on the histograms
+    thresholds = [70, 148, 100]  # Replace with actual thresholds based on the histograms
+
+    # Display original image
+    plt.figure(figsize=(10, 5))
+    plt.subplot(1, 4, 1)
+    plt.imshow(image, cmap='gray')
+    plt.title("Original")
+    plt.axis('off')
+
+    # Apply thresholds and display results
+    for i, t in enumerate(thresholds):
+        binary_image = apply_threshold(image, t)
+        plt.subplot(1, 4, i + 2)
+        plt.imshow(binary_image, cmap='gray')
+        plt.title(f"Threshold {t}")
+        plt.axis('off')
+
+    plt.tight_layout()
+    plt.show()
+
