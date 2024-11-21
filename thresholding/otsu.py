@@ -25,4 +25,4 @@ def process_otsu_threshold(image, image_index):
     print(f"Otsu's Threshold Value for Image {image_index}: {threshold_value}")
 
     # Display the binary image with a title indicating Otsu's thresholding result
-    display_image(binary_image, f"Otsu's Thresholding - Image {image_index}")
+    display_image(binary_image, f"Otsu's Thresholding {threshold_value} - Image {image_index}")
